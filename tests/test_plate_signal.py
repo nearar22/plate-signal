@@ -107,5 +107,6 @@ def test_normalizer_accepts_multiple_quotes_per_source(direct_deploy):
     instance = object.__getattribute__(contract, "_instance")
     normalize = sys.modules[instance.__class__.__module__]._normalize
     fetched = [{"source_index": 0, "url": MENU, "host": "menu.example.com", "available": True, "content": "Garden Ember Bowl is dairy-free. It has no dairy ingredients.", "sha256": "a" * 64}, {"source_index": 1, "url": GUIDE, "host": "allergens.example.org", "available": True, "content": "Garden Ember Bowl contains milk. Milk is intentionally present.", "sha256": "b" * 64}]
-    raw = {"finding": "CONFLICT", "severity": 91, "menu_mention": "FREE_FROM", "guide_mention": "CONTAINS", "action": "AVOID_UNTIL_CONFIRMED", "summary": "The exact dish has incompatible allergen statements in the two sources.", "evidence": [{"source_index": 0, "quote": "Garden Ember Bowl is dairy-free."}, {"source_index": 0, "quote": "It has no dairy ingredients."}, {"source_index": 1, "quote": "Garden Ember Bowl contains milk."}]}
-    assert len(normalize(raw, fetched)["evidence"]) == 3
+    raw = {"finding": "CONFLICT", "severity": "91", "menu_mention": "FREE_FROM", "guide_mention": "CONTAINS", "action": "AVOID_UNTIL_CONFIRMED", "summary": "The exact dish has incompatible allergen statements in the two sources.", "evidence": [{"source_index": 0, "quote": "Garden Ember Bowl is dairy-free."}, {"source_index": 0, "quote": "It has no dairy ingredients."}, {"source_index": 1, "quote": "Garden Ember Bowl contains milk."}]}
+    normalized = normalize(raw, fetched)
+    assert normalized["severity"] == 91 and len(normalized["evidence"]) == 3
