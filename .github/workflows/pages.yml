@@ -35,7 +35,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_CONTRACT_ADDRESS: "0x303D86EE0654099205d5B37Fad380EB0810B7243"
-          VITE_DEMO_REPORT_ID: "ember-milk-demo"
+          VITE_DEMO_REPORT_ID: "plate-signal-mwie0o5o"
           VITE_GENLAYER_RPC_URL: "https://studio-next.genlayer.com/api"
           VITE_GENLAYER_CHAIN_ID: "61997"
       - uses: actions/configure-pages@v5
