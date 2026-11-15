@@ -54,3 +54,23 @@ The direct contract suite covers duplicate IDs, URL and host boundaries, persist
 
 Files in `frontend/public/demo/` are synthetic test fixtures and are labeled as such. They prove the live consensus path without implying a real restaurant or real allergen notice.
 
+## Reviewed deployment
+
+- Network: GenLayer Studio Next (`61997`)
+- Contract: `0x303D86EE0654099205d5B37Fad380EB0810B7243`
+- Deployment transaction: `0x409f1860aaca993be697947a27bca79fd0feb74cf455432517d1baf228924002`
+- Reviewed source commit: `18f303fe8f209fa61c4bc1fe10271f1426e870ba`
+- Deployment result: `FINISHED_WITH_RETURN` / `MAJORITY_AGREE`
+
+## Live end-to-end proof
+
+- Report: `plate-signal-mwie0o5o`
+- Open: `0xc026d825fef9f6b59687e639a610922a8ab7591b96224bc70d2952d464b97f88`
+- Intelligent review: `0x4f32625b3bf753df7e7a253df18373b1535c17d3da14214fb39dc4edfc39ddd6`
+- Seal: `0x52a02afa7f1fd3eb59b43903be779abcaf2ad78b41f4fbf14d61f7af80f7c174`
+- Final state: `SEALED` · `CONFLICT` · `AVOID_UNTIL_CONFIRMED`
+- Immutable receipt: `aa823ccd277b91879b9e7bf9981fe8e00a7a0c1b2cd18f89d8db07cb101bb10c`
+
+The smoke test opens a report, runs the real consensus review against two separately hosted demo fixtures, confirms two source receipts, seals the report, and reads the final receipt back from Studio Next.
+
+

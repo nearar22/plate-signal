@@ -1,6 +1,6 @@
 import{createAccount,createClient}from"genlayer-js";
 import{studioDevnet}from"genlayer-js/chains";
-const contract=process.env.CONTRACT_ADDRESS?.trim()||"",raw=process.env.GENLAYER_PRIVATE_KEY?.trim();
+const contract=process.env.CONTRACT_ADDRESS?.trim()||"0x303D86EE0654099205d5B37Fad380EB0810B7243",raw=process.env.GENLAYER_PRIVATE_KEY?.trim();
 if(!contract)throw new Error("CONTRACT_ADDRESS is required");if(!raw)throw new Error("GENLAYER_PRIVATE_KEY is required");
 const key=raw.startsWith("0x")?raw:`0x${raw}`,chain={...studioDevnet,id:61997,name:"GenLayer Studio Next",rpcUrls:{default:{http:["https://studio-next.genlayer.com/api"]}}},account=createAccount(key),client=createClient({chain,account}),sleep=ms=>new Promise(r=>setTimeout(r,ms)),id=`plate-signal-${Date.now().toString(36)}`;
 async function finalized(hash){for(let i=0;i<300;i++){const r=await client.getTransaction({hash}).catch(()=>null),s=String(r?.statusName??r?.status??"PENDING").toUpperCase();if(s==="FINALIZED")return r;if(["UNDETERMINED","DECLINED","CANCELED","CANCELLED"].includes(s))throw new Error(`Transaction ended ${s}`);await sleep(3000)}throw new Error("Transaction timed out")}

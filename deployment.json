@@ -1,0 +1,22 @@
+{
+  "project": "PlateSignal",
+  "network": "GenLayer Studio Next",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "contractAddress": "0x303D86EE0654099205d5B37Fad380EB0810B7243",
+  "deploymentTransaction": "0x409f1860aaca993be697947a27bca79fd0feb74cf455432517d1baf228924002",
+  "sourceCommit": "18f303fe8f209fa61c4bc1fe10271f1426e870ba",
+  "deployedAt": "2026-11-15",
+  "execution": "FINISHED_WITH_RETURN",
+  "consensus": "MAJORITY_AGREE",
+  "liveValidation": {
+    "reportId": "plate-signal-mwie0o5o",
+    "openTransaction": "0xc026d825fef9f6b59687e639a610922a8ab7591b96224bc70d2952d464b97f88",
+    "reviewTransaction": "0x4f32625b3bf753df7e7a253df18373b1535c17d3da14214fb39dc4edfc39ddd6",
+    "sealTransaction": "0x52a02afa7f1fd3eb59b43903be779abcaf2ad78b41f4fbf14d61f7af80f7c174",
+    "status": "SEALED",
+    "finding": "CONFLICT",
+    "action": "AVOID_UNTIL_CONFIRMED",
+    "receipt": "aa823ccd277b91879b9e7bf9981fe8e00a7a0c1b2cd18f89d8db07cb101bb10c"
+  }
+}
